@@ -7,7 +7,7 @@ import {
 const initialState = {
   isLoading: false,
   error: "",
-  smurf: {name: "", age: "", height: "", id: ""}
+  smurf: [{name: "", age: 0, height: "", id: 0}]
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,6 +20,7 @@ const reducer = (state = initialState, action) => {
     case SMURFDATA_LOAD_SUCCESS:
       return {
         ...state,
+        smurf: action.payload,
         isLoading: false
       };
     case SMURFDATA_LOAD_FAILURE:

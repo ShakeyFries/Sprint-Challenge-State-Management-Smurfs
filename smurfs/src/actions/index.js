@@ -10,6 +10,7 @@ export const getSmurfData = () => dispatch => {
   axios
     .get("http://localhost:3333/smurfs")
     .then(res => {
+      console.log(res.data);
       dispatch({
         type: SMURFDATA_LOAD_SUCCESS,
         payload: res.data
@@ -21,4 +22,21 @@ export const getSmurfData = () => dispatch => {
         payload: "You done smurfed up!"
       });
     });
+
+    // axios
+    //   .post("http://localhost:3333/smurfs")
+    //   .then(res => {
+    //     dispatch({
+    //       type: SMURFDATA_LOAD_SUCCESS,
+    //       payload: res.data
+    //     })
+    //   })
+    //   .catch(err => {
+    //     dispatch({
+    //       type: SMURFDATA_LOAD_FAILURE,
+    //       payload: "You done smurfed up!"
+    //     });
+    // });
+
+    
 };
