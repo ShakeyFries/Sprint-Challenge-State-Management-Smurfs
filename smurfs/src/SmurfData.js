@@ -7,7 +7,7 @@ const SmurfData = props => {
   const [name, setName] = React.useState("");
   const [age, setAge] = React.useState("");
   const [height, setHeight] = React.useState("");
-  const smurfette = {
+  const nuSmurf = {
     name: name,
     age: age,
     height: height,
@@ -31,13 +31,14 @@ const SmurfData = props => {
       <input onChange={(e) => {setName(e.target.value)}} value={name} placeholder="name" />
       <input onChange={(e) => {setAge(e.target.value)}} value={age} placeholder="age" />
       <input onChange={(e) => {setHeight(e.target.value)}} value={height} placeholder="height" />
+      <br/>
       <button onClick={(e) => {
         e.preventDefault();
         setName("");
         setHeight("");
         setAge("");
 
-        axios.post("http://localhost:3333/smurfs", smurfette)
+        axios.post("http://localhost:3333/smurfs", nuSmurf)
           .then(res => {
             console.log(res)
           })
